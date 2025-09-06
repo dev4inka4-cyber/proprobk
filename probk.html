@@ -1,0 +1,760 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пробковый Интерьер - Нижний Новгород</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B4513;
+            --secondary: #CD853F;
+            --accent: #D2691E;
+            --light: #F5F5DC;
+            --dark: #2F4F4F;
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 10px 0;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-contact a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        .header-contact a:hover {
+            color: var(--secondary);
+        }
+        
+        .header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 15px auto;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .about-text li {
+            margin-bottom: 10px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            margin-bottom: 15px;
+        }
+        
+        .service-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .service-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Info Section */
+        .info {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .info-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .info-links {
+            list-style: none;
+        }
+        
+        .info-links li {
+            margin-bottom: 10px;
+        }
+        
+        .info-links a {
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-links a:hover {
+            color: var(--primary);
+        }
+        
+        .info-links i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-details i {
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 20px;
+            width: 20px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="header-contact">
+                    <a href="tel:+79107920057"><i class="fas fa-phone"></i> +7(910)792-00-57</a>
+                    <a href="mailto:probka_m@mail.ru"><i class="fas fa-envelope"></i> probka_m@mail.ru</a>
+                </div>
+                <div class="header-address">
+                    <i class="fas fa-map-marker-alt"></i> Московское шоссе, д.104, Нижний Новгород
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="logo">Пробковый<span>Интерьер</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#portfolio">Портфолио</a></li>
+                        <li><a href="#info">Информация</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Пробковые покрытия в Нижнем Новгороде</h1>
+            <p>Опытные мастера с 1998 года. Работаем с натуральной пробкой любой сложности. Гарантия качества!</p>
+            <a href="#contact" class="btn">Получить консультацию</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О КОМПАНИИ</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>"Пробковый Интерьер" - небольшая по размеру эффективная существующая с 2024 года фирма, которая занимается исключительно пробковыми покрытиями и изделиями из натуральной пробки.</h3>
+                    <p>Такая узкая специализация позволяет предложить нашим клиентам высочайший уровень сервиса за приемлемую цену. Обращаясь к нам Вы получаете целый пакет услуг:</p>
+                    <ol>
+                        <li>Грамотный подбор материала.</li>
+                        <li>Выезд специалиста для замеров и предварительных консультаций.</li>
+                        <li>Разработка или доработка дизайн-проекта (при необходимости).</li>
+                        <li>Подготовка основания (выравнивание стен, потолков, устройство полов любого типа и сложности).</li>
+                        <li>Квалифицированная укладка пробкового покрытия любого уровня сложности.</li>
+                        <li>Гарантийное и послегарантийное обслуживание.</li>
+                        <li>Круглосуточная техническая поддержка по телефону, а так же online-консультации.</li>
+                    </ol>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Пробковое покрытие">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">ЧТО МЫ УМЕЕМ</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Пробковые покрытия на стены">
+                    </div>
+                    <div class="service-content">
+                        <h3>Наклейка пробковых покрытий на стены</h3>
+                        <p>Профессиональная оклейка стен пробковыми покрытиями любой сложности.</p>
+                        <a href="#" class="service-link">ПОДРОБНЕЕ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b1c45346aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Пробковые покрытия на пол">
+                    </div>
+                    <div class="service-content">
+                        <h3>Наклейка пробковых покрытий на пол</h3>
+                        <p>Качественная укладка пробковых полов с гарантией долговечности.</p>
+                        <a href="#" class="service-link">ПОДРОБНЕЕ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1560448076-3f6f44b6b4a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Художественная наклейка">
+                    </div>
+                    <div class="service-content">
+                        <h3>Художественная наклейка пробковых покрытий</h3>
+                        <p>Создание уникальных дизайнерских решений из пробки.</p>
+                        <a href="#" class="service-link">ПОДРОБНЕЕ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Реставрация пробковых покрытий">
+                    </div>
+                    <div class="service-content">
+                        <h3>Реставрация пробковых покрытий</h3>
+                        <p>Восстановление старых пробковых поверхностей до идеального состояния.</p>
+                        <a href="#" class="service-link">ПОДРОБНЕЕ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1618220252344-8ec99ec624b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Тонировка пробкового покрытия">
+                    </div>
+                    <div class="service-content">
+                        <h3>Тонировка пробкового покрытия</h3>
+                        <p>Изменение цвета пробковых поверхностей согласно вашему дизайну.</p>
+                        <a href="#" class="service-link">ПОДРОБНЕЕ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Изделия из пробки">
+                    </div>
+                    <div class="service-content">
+                        <h3>Изделия из пробки</h3>
+                        <p>Изготовление мебели, аксессуаров и декоративных элементов из пробки.</p>
+                        <a href="#" class="service-link">ПОДРОБНЕЕ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="info" class="info">
+        <div class="container">
+            <h2 class="section-title">ПОЛЕЗНАЯ ИНФОРМАЦИЯ</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Часто задаваемые вопросы</h3>
+                    <ul class="info-links">
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Как ухаживать за пробковым покрытием?</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Сколько служит пробковый пол?</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Можно ли использовать пробку в ванной комнате?</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Как подготовить поверхность для укладки пробки?</a></li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Инструкции</h3>
+                    <ul class="info-links">
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Уход за пробковыми покрытиями</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Подготовка поверхности к монтажу</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Ремонт пробковых покрытий</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Особенности эксплуатации</a></li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Подробнее про замковые и клеевые полы</h3>
+                    <ul class="info-links">
+                        <li><a href="#"><i class="fas fa-info-circle"></i> Преимущества замковых систем</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> Особенности клеевых пробковых полов</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> Сравнительная характеристика</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle"></i> Что выбрать для вашего помещения?</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="call-to-action" style="text-align: center; margin-top: 50px; padding: 30px; background-color: var(--light); border-radius: 10px;">
+                <h3>ОСТАЛИСЬ ВОПРОСЫ?</h3>
+                <p style="font-size: 18px; margin: 20px 0;">ПОЗВОНИТЕ НАМ ПО ТЕЛЕФОНУ: 8-910-792-00-57</p>
+                <p style="font-size: 18px; margin-bottom: 30px;">ИЛИ ЗАДАЙТЕ ВОПРОС ЧЕРЕЗ ФОРМУ ОБРАТНОЙ СВЯЗИ</p>
+                <a href="#contact" class="btn">Задать вопрос</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">НАПИСАТЬ НАМ</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Пробковый интерьер</h3>
+                    <p>Работаем с пробкой с 1998года.<br>Знаем о ней все или почти все!</p>
+                    
+                    <h3 style="margin-top: 30px;">Наши услуги</h3>
+                    <p>Наклейка пробковых покрытий на стены.<br>Наклейка пробковых покрытий на пол.<br>Дополнительные услуги по пробковым материалам.</p>
+                    
+                    <h3 style="margin-top: 30px;">Полезная информация</h3>
+                    <p>Часто задаваемые вопросы.<br>Инструкции.<br>Подробнее про замковые и клеевые полы.</p>
+                    
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> г. Нижний Новгород, Московское шоссе, д.104</p>
+                        <p><i class="fas fa-envelope"></i> probka_m@mail.ru</p>
+                        <p><i class="fas fa-phone"></i> +7(910) 792-00-57</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Форма обратной связи</h3>
+                    <form id="feedback-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Ваш вопрос или сообщение</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Пробковый Интерьер</h4>
+                    <p>Профессиональная укладка пробковых покрытий в Нижнем Новгороде и области с 1998 года.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#">Пробковые покрытия на стены</a></li>
+                        <li><a href="#">Пробковые покрытия на пол</a></li>
+                        <li><a href="#">Художественная наклейка</a></li>
+                        <li><a href="#">Реставрация покрытий</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+79107920057">+7(910)792-00-57</a></li>
+                        <li><a href="mailto:probka_m@mail.ru">probka_m@mail.ru</a></li>
+                        <li>Московское шоссе, д.104, Нижний Новгород</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Пробковый Интерьер - пробковые покрытия в Нижнем Новгороде. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простая валидация формы
+        document.getElementById('feedback-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            if(name && phone) {
+                alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+                document.getElementById('feedback-form').reset();
+            } else {
+                alert('Пожалуйста, заполните обязательные поля: имя и телефон.');
+            }
+        });
+        
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
